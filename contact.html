@@ -5,15 +5,27 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-
-  <h1>Contact Me</h1>
-  <p>You can reach me at: <a href="mailto:you@example.com">you@example.com</a></p>
-
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      
+      <h1>Contact Me</h1>
+      
+      <form action="https://formspree.io/projects/2760293072527948827/overview" method="POST" class="contact-form">
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br><br>
+      
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+      
+        <label>Message:</label><br>
+        <textarea name="message" rows="5" required></textarea><br><br>
+      
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      
+ 
 </body>
 </html>
