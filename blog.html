@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Gallery</title>
+  <meta charset="UTF-8">
+  <title>My Blog</title>
   <link rel="stylesheet" href="style.css">
   <a href="blog.html">Blog</a>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -26,44 +27,19 @@
 
 </head>
 <body>
-    <label class="switch">
-        <input type="checkbox" id="darkModeToggle">
-        <span class="slider round"></span>
-      </label>
-      
-      
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="gallery.html">Gallery</a>
-</nav>
+  <h1>📝 My Blog</h1>
 
-<h1>My Image Gallery</h1>
+  <div class="blog-post">
+    <h2>First Blog Post</h2>
+    <p class="date">June 15, 2025</p>
+    <p>This is my first blog post. I'm learning how to build a personal website using HTML, CSS, and JavaScript. It's going great so far!</p>
+  </div>
 
-<div class="gallery">
-  <img src="gallery1.jpeg" alt="Gallery Image 1">
-  <img src="gallery2.jpeg" alt="Gallery Image 2">
-  <img src="gallery3.jpeg" alt="Gallery Image 3">
-  <img src="gallery4.jpeg" alt="Gallery Image 4">
-</div>
-<script>
-    const toggle = document.getElementById('darkModeToggle');
-  
-    // Load dark mode setting on page load
-    window.addEventListener('DOMContentLoaded', () => {
-      const isDark = localStorage.getItem('dark-mode') === 'true';
-      document.body.classList.toggle('dark-mode', isDark);
-      toggle.checked = isDark;
-    });
-  
-    // Update dark mode and save setting
-    toggle.addEventListener('change', () => {
-      document.body.classList.toggle('dark-mode');
-      localStorage.setItem('dark-mode', toggle.checked);
-    });
-  </script>
-  
+  <div class="blog-post">
+    <h2>Second Post – Dark Mode Added!</h2>
+    <p class="date">June 16, 2025</p>
+    <p>I just added a dark mode toggle that works across all pages using localStorage. It feels great to build features like this!</p>
+  </div>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init();
@@ -77,6 +53,12 @@
     <div class="skill-level" style="width: 90%">90%</div>
   </div>
 </div>
+
+<h2>My Blog</h2>
+<ul>
+  <li><a href="blog-viewer.html?file=my-first-post.md">My First Blog Post</a></li>
+  <!-- Add more links here -->
+</ul>
 
 </body>
 </html>
