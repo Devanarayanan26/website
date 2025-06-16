@@ -256,3 +256,27 @@ body.dark-mode .resume-btn {
 body.dark-mode .resume-btn:hover {
   background-color: #64b5f6;
 }
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .projects-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-chart,
+  .resume-section {
+    width: 100%;
+  }
+}
