@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FutureByte Blogs</title>
+  <link rel="stylesheet" href="futurebyte-blog.css" />
+<link rel="stylesheet" href="fbblogs.css" />
+   <script defer src="script.js"></script>
+</head>
+<body>
+
+<!-- Header -->
+  <header>
+    <div class="header-left">
+      <div id="hamburger" class="hamburger">&#9776;</div>
+      <div class="logo">AVN FutureByte</div>
+    </div>
+  </header>
+
+  
+  <!-- Side Menu -->
+  <aside class="side-menu" id="sideMenu">
+    <a href="index.html">Home</a>
+   
+
+    <div class="dropdown">
+    <button class="dropbtn">Blogs</button>
+    <div class="dropdown-content">
+      <a href="futurebyte-blog.html">FutureByte blogs</a>
+      <a href="cipherbyte-blogs.html">CipherByte blogs</a>
+    </div>
+  </div>
+
+    <div class="dropdown">
+    <button class="dropbtn">Tools</button>
+    <div class="dropdown-content">
+      <a href="futurebyte.html">AVN FutureByte</a>
+      <a href="cipherbyte.html">AVN CipherByte</a>
+    </div>
+  </div>
+    <a href="join.html">Join</a>
+    <a href="contribute.html">Contribute</a>
+    <a href="contact.html">Contact us</a>
+    <button id="sideDarkModeToggle">🌙 Dark Mode</button>
+  </aside>
+
+  <main class="blog-container" id="blogContainer">
+    <!-- Blog Cards -->
+    <div class="blog-card">
+      <img src="blog1.jpg" alt="AI in 2025">
+      <h2>Future of AI: 2025 and Beyond</h2>
+      <p class="meta">By Admin • June 2025</p>
+      <p class="preview">Explore what’s coming next in the AI world, from generative agents to quantum learning systems...</p>
+      <a href="#">Read More</a>
+    </div>
+
+    <div class="blog-card">
+      <img src="blog2.jpg" alt="Cybersecurity Trends">
+      <h2>Top Cybersecurity Trends</h2>
+      <p class="meta">By Admin • May 2025</p>
+      <p class="preview">A deep dive into the latest cybersecurity challenges and how FutureByte is addressing them...</p>
+      <a href="#">Read More</a>
+    </div>
+
+    <div class="blog-card">
+      <img src="blog3.jpg" alt="Open Source AI">
+      <h2>Why Open Source Matters in AI</h2>
+      <p class="meta">By Admin • April 2025</p>
+      <p class="preview">We share why ethical, transparent AI development is at the core of FutureByte’s mission...</p>
+      <a href="#">Read More</a>
+    </div>
+  </main>
+
+  <script>
+    // Placeholder for admin check
+    const isAdmin = true; // Change to false to hide the blog content
+
+    if (!isAdmin) {
+      document.getElementById('blogContainer').innerHTML = "<p style='text-align:center'>You do not have access to this page.</p>";
+    }
+  </script>
+ <script defer src="supabase-config.js"></script>
+  <script defer src="fbblogs.js"></script>
+
+
+
+
+
+  <!-- Container where blogs will be shown -->
+<div id="blog-container"></div>
+
+<!-- Fetch and render blogs from Supabase -->
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+
+  const supabase = createClient('https://letgrhjewhwapxzayuoh.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxldGdyaGpld2h3YXB4emF5dW9oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTEyMDY5OTAsImV4cCI6MjA2Njc4Mjk5MH0.LJ8mTmJP9xeGzes1OAZwqMiKObk7LjXoeoghGarUFaM')
+
+  async function loadBlogs() {
+    const { data: blogs, error } = await supabase
+      .from('blogs')
+      .select('*')
+      .order('created_at', { ascending: false })
+
+    const container = document.getElementById('blog-container')
+    blogs.forEach(blog => {
+      const blogElement = document.createElement('div')
+      blogElement.innerHTML = `
+        <div style="border:1px solid #ccc;padding:10px;margin:10px;">
+          <h3>${blog.title}</h3>
+          <p>${blog.content}</p>
+          <small>${new Date(blog.created_at).toLocaleString()}</small>
+        </div>`
+      container.appendChild(blogElement)
+    })
+  }
+
+  loadBlogs()
+</script>
+
+</body>
+</html>

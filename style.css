@@ -355,86 +355,127 @@ body.dark .top-row {
 
 
 
-/* Mobile First Styling */
-
-/* Make images responsive */
-img {
-  max-width: 100%;
-  height: auto;
+/* Reset default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Responsive text */
-h1, h2, h3, h4, h5, p {
-  word-wrap: break-word;
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f4f4f4;
+  color: #333;
 }
 
-/* Make container fluid */
-.container {
-  width: 90%;
-  margin: 0 auto;
+/* Header */
+header {
+  background: #222;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
 }
 
-/* Responsive navigation */
+/* Navigation */
 nav ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  background: #444;
 }
 
 nav ul li {
+  list-style: none;
   margin: 10px;
 }
 
-/* Cards */
-.card {
-  width: 100%;
-  margin-bottom: 20px;
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
 }
 
-/* Flex layouts fix */
+/* Container */
+.container {
+  width: 90%;
+  margin: 20px auto;
+}
+
+/* Cards and Rows */
 .row {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-/* Columns inside rows */
 .col {
-  flex: 1 1 100%; /* Full width on mobile */
+  flex: 1 1 100%;
 }
 
-/* Buttons responsive */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Buttons */
 button {
   width: 100%;
   padding: 12px;
-  font-size: 16px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-/* Media Queries for Tablet */
+button:hover {
+  background: #0056b3;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* 🔗 Responsive Media Queries */
+
+/* Tablets (≥600px) */
 @media (min-width: 600px) {
   .col {
-    flex: 1 1 48%; /* Two columns on tablets */
+    flex: 1 1 48%; /* Two columns */
   }
 
   nav ul {
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
 
-/* Media Queries for Desktop */
+/* Desktops (≥992px) */
 @media (min-width: 992px) {
   .col {
-    flex: 1 1 30%; /* Three columns on desktop */
-  }
-
-  nav ul {
-    justify-content: flex-end;
+    flex: 1 1 30%; /* Three columns */
   }
 
   .container {
     width: 80%;
+  }
+
+  nav ul {
+    justify-content: flex-end;
   }
 }
