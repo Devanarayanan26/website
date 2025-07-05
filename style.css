@@ -1,1 +1,358 @@
 
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header */
+header {
+  background: #4cacf5;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+   gap: 20px;
+    position: relative;
+}
+
+
+
+/* Keep the header fixed */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+
+  margin-left: -35rem; /* or add padding */
+}
+
+ 
+
+
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: white;
+  font-weight: 500;
+}
+
+#darkModeToggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Hamburger */
+.hamburger {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Side Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100%;
+  background: #222;
+  color: rgb(255, 255, 255);
+  padding: 2rem 1rem;
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.side-menu.show {
+  transform: translateX(0);
+}
+
+.side-menu a {
+  color: white;
+  font-size: 1.1rem;
+}
+
+#sideDarkModeToggle {
+  margin-top: 1rem;
+  border: 1px solid white;
+  background: none;
+  padding: 0.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Top Row */
+.top-row {
+  background: linear-gradient(rgba(228, 82, 150, 0.85), rgba(72, 179, 206, 0.85)), url('resume.jpeg') no-repeat center center/cover;
+  padding: 2rem;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.top-description {
+  padding: 1rem;
+  border-radius: 12px;
+  max-width: 800px;
+  font-weight: bold;
+}
+
+.top-image-box img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+/* Feature Sections */
+.feature-section {
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 1100px;
+  background-color: #f0f9ff;
+}
+
+.feature-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.feature-image img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.feature-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.feature-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-text p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Reversed Blog Section */
+.reverse-row {
+  flex-direction: row-reverse;
+}
+
+/* Tools Section Background */
+.tools-section {
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 1100px;
+  background: url('to.jpeg') no-repeat center center/cover;
+  background-size: cover;
+  color: white;
+}
+
+/* Blogs Section Background */
+.blogs-section {
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 1100px;
+  background: url('bl.jpeg') no-repeat center center/cover;
+  background-size: cover;
+  color: white;
+}
+
+/* Join or Contribute Section */
+.join-or-contribute-section {
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 1100px;
+  background: url('jo.jpeg') no-repeat center center/cover;
+  background-size: cover;
+  color: rgb(230, 230, 230);
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #eee;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+
+footer a {
+  color: #ccc;
+  margin: 0 0.5rem;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark header,
+body.dark footer {
+  background: #1e1e1e;
+}
+
+body.dark .card,
+body.dark .feature-section {
+  background-color: #222;
+  color: #ccc;
+}
+
+body.dark .top-row {
+  background: rgba(30, 30, 30, 0.85);
+}
+
+/* Cards */
+.row {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Card Link Styling */
+.card-link {
+  text-decoration: none;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+}
+
+.card-link:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+
+
+
+
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0rem 0rem;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #003366;
+  min-width: 160px;
+  z-index: 1;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #005599;
+}
+
+/* Show on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+
+
+
+
