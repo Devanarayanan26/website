@@ -355,127 +355,85 @@ body.dark .top-row {
 
 
 
-/* Reset default spacing */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* 🌐 Mobile-First Responsive Design */
 
-/* Body styling */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background: #f4f4f4;
-  color: #333;
-}
-
-/* Header */
-header {
-  background: #222;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-}
-
-/* Navigation */
-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background: #444;
-}
-
-nav ul li {
-  list-style: none;
-  margin: 10px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  padding: 8px 16px;
-}
-
-/* Container */
-.container {
-  width: 90%;
-  margin: 20px auto;
-}
-
-/* Cards and Rows */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.col {
-  flex: 1 1 100%;
-}
-
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-/* Images */
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-/* Buttons */
-button {
-  width: 100%;
-  padding: 12px;
-  background: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #0056b3;
-}
-
-/* Footer */
-footer {
-  background: #222;
-  color: #fff;
-  text-align: center;
-  padding: 15px;
-  margin-top: 20px;
-}
-
-/* 🔗 Responsive Media Queries */
-
-/* Tablets (≥600px) */
-@media (min-width: 600px) {
-  .col {
-    flex: 1 1 48%; /* Two columns */
+/* Mobile (≤480px) */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.5rem;
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
   }
 
-  nav ul {
-    justify-content: space-around;
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 1rem 0.5rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .feature-row,
+  .reverse-row {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .top-row {
+    padding: 1rem;
+    flex-direction: column;
+  }
+
+  .card {
+    max-width: 90%;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    width: 100%;
+  }
+
+  .dropbtn {
+    width: 100%;
+    text-align: left;
+  }
+
+  .side-menu {
+    width: 100%;
   }
 }
 
-/* Desktops (≥992px) */
-@media (min-width: 992px) {
-  .col {
-    flex: 1 1 30%; /* Three columns */
+/* Tablet (≤768px) */
+@media (max-width: 768px) {
+  .logo {
+    margin-left: 0;
   }
 
-  .container {
-    width: 80%;
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  nav ul {
-    justify-content: flex-end;
+  .feature-image img {
+    max-width: 80%;
+  }
+
+  .top-description {
+    padding: 0.5rem;
+  }
+
+  .card {
+    flex: 1 1 100%;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: center;
   }
 }
