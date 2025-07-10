@@ -76,7 +76,7 @@
       <div class="card">Tool 3 preview</div>
     </div>
     <div class="view-more">
-      <a href="tools.html">Explore Tools</a>
+      <a href="futurebyte-tools.html">Explore Tools</a>
     </div>
   </section>
 
@@ -108,5 +108,29 @@
     </div>
     <p>&copy; 2025 AVN Innovations. All rights reserved.</p>
   </footer>
+
+
+
+  
+
+<button id="login-btn">Admin Login</button>
+<button id="logout-btn" style="display:none;">Logout</button>
+
+<div id="admin-panel" style="display:none; margin-top: 20px;">
+  <h2>Upload New Blog</h2>
+  <input type="text" id="blog-title" placeholder="Title" /><br><br>
+  <textarea id="blog-content" placeholder="Content"></textarea><br><br>
+  <input type="file" id="blog-image" /><br><br>
+  <button onclick="uploadBlog()">Upload Blog</button>
+</div>
+
+<hr>
+
+<div id="blog-list"></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="admin.js"></script>
+
 </body>
 </html>
