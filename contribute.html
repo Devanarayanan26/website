@@ -128,9 +128,64 @@
       >
         
         
-        <iframe src="https://forms.gle/vxZQiBCw8e8qHcEG8" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-        
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contribute Form</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+    .form-container {
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    iframe {
+      width: 100%;
+      height: 1000px; /* Adjust height if needed */
+      border: none;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FORM CONTAINER + IFRAME -->
+  <div class="form-container" id="formContainer">
+    <h2>Contribute to AVN Innovations</h2>
+    <iframe 
+      id="formFrame"
+      src="https://forms.gle/vxZQiBCw8e8qHcEG8" 
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- ADD THIS SCRIPT JUST BEFORE CLOSING </body> -->
+  <script>
+    document.getElementById("formFrame").addEventListener("load", function () {
+      // Wait a moment and scroll the form into view
+      setTimeout(() => {
+        const formContainer = document.getElementById("formContainer");
+        formContainer.scrollIntoView({ behavior: "smooth" });
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+       
+      
+      
     
 
   <script src="script.js"></script>
